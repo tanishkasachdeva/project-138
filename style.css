@@ -20,7 +20,36 @@ body
     border: 1px solid white;
 }
 
-#start,#status
+#start,#status,#restart
 {
     font-size: 22px;
+}
+
+.modal-dialog
+{
+    width: 40%;
+}
+
+li
+{
+    margin-bottom: 10px;
+}
+
+.modal-header
+{
+    height: 70px;
+    font-size: 22px;
+}
+
+.modal-content
+{
+    font-size: 18px;
+}
+
+h4
+{
+    margin:0;
+    line-height: 2;
+    width: 100%;
+    background-color: white;
 }

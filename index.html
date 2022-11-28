@@ -18,13 +18,40 @@
         <center>
             <div class="btn btn-primary heading">
                 <h3>AI PING PONG GAME</h3>
-                <button class="btn btn-primary" data-target="menu" data-target="#myModal">Instructions</button>
+                <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Instructions</button>
             </div>
             <br><br>
             <button class="btn btn-success" id="start" onclick="startGame()">PLAY</button>
             <br><br>
             <h3 class="btn btn-warning" id="status"></h3>
             <div id="canvas"></div>
+            <br><br>
+            <button class="btn btn-danger" id="restart" onclick="restart()">Restart</button>
+            <br><br>
+            <h4>
+                Developed By- Tanishka Sachdeva
+            </h4>
+            
+            <div id="myModal" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">    
+                        <span>
+                            <button class="close" data-dismiss="modal">&times;</button>
+                            <h3>Instructions</h3>
+                        </span>
+                        </div>
+                        <div class="modal-body">
+                            <ol>
+                               <li> Get a little away from your device, so that it can easily detect your right wrist.</li>
+                               <li> To move the paddle, raise your right hand and move it up and down. </li>
+                               <li>That's it! Enjoy Your Game!</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             
         </center>
 
