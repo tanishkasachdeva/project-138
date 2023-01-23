@@ -21,6 +21,10 @@ var ball = {
     dy:3
 }
 
+rightWristX=0;
+rightWristY=0;
+rightWrist_score=0;
+
 function setup(){
   var canvas =  createCanvas(700,600);
   canvas.parent('canvas');
@@ -29,7 +33,25 @@ function setup(){
   video.hide();
 
   poseNet=ml5.poseNet(video,modelLoaded);
+  poseNet.on('pose', gotPoses);
   
+}
+
+function gotPoses(results)
+{
+  if(results.length > 0)
+  {
+    console.log(results);
+    rightWristX=results[0].pose.rightWrist.x;
+    rightWristY=results[0].pose.rightWrist.y;
+    rightWrist_score=results[0].pose.keypoints[10].score;
+  }
+}
+
+function startGame()
+{
+  game_status="start";
+  document.getElementById("status").innerHTML="game is loaded";
 }
 
 function modelLoaded()
@@ -39,6 +61,13 @@ function modelLoaded()
 
 
 function draw(){
+
+  if(rightWrist_score>0.2)
+  {
+    fill('red');
+    stroke('red');
+    circle(rightWristX,rightWristY,20);
+  }
 
  background(0);
  
