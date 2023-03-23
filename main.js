@@ -25,6 +25,7 @@ rightWristX=0;
 rightWristY=0;
 rightWrist_score=0;
 
+game_status="";
 function setup(){
   var canvas =  createCanvas(700,600);
   canvas.parent('canvas');
@@ -61,6 +62,10 @@ function modelLoaded()
 
 
 function draw(){
+  if (game_status=="start")
+  {
+
+  
 
   if(rightWrist_score>0.2)
   {
@@ -68,7 +73,7 @@ function draw(){
     stroke('red');
     circle(rightWristX,rightWristY,20);
   }
-
+ 
  background(0);
  
  image(video,0,0,700,600);
@@ -88,7 +93,7 @@ function draw(){
    fill(250,0,0);
     stroke(0,0,250);
     strokeWeight(0.5);
-   paddle1Y = mouseY; 
+   paddle1Y = rightWristY; 
    rect(paddle1X,paddle1Y,paddle1,paddle1Height,100);
    
    
@@ -109,7 +114,7 @@ function draw(){
    //function move call which in very important
     move();
 }
-
+}
 
 
 //function reset when ball does notcame in the contact of padde
